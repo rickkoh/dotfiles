@@ -1,0 +1,12 @@
+#!/bin/bash
+fileName="$1"
+url="$2"
+
+# check for http or https, if not, append.
+if [[ ${url} != *"https://"* ]] && [[ ${url} != *"http://"* ]]
+then
+  url="https://$url"
+fi
+
+# create new html file with specified link.
+echo "<html><body><script type=\"text/javascript\">window.location.href=\"$url\";</script></body></html>" > $fileName.html
