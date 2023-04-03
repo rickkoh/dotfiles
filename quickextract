@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Prompt the user for the title of the extract
+read -p "Title: " title
+
+# Create a new directory on the Desktop with the given title
+mkdir ~/Desktop/"$title"
+
+# Create a Photos directory and copy all the JPG files over with metadata preserved
+mkdir -p ~/Desktop/"$title"/Photos
+cp -p ./DCIM/100MSDCF/*.JPG ~/Desktop/"$title"/Photos
+
+# Create a RAW directory inside Photos and copy all the ARW files over with metadata preserved
+mkdir -p ~/Desktop/"$title"/Photos/RAW
+cp -p ./DCIM/100MSDCF/*.ARW ~/Desktop/"$title"/Photos/RAW
+
+# Create a Videos directory and copy all the MP4 files over with metadata preserved
+mkdir -p ~/Desktop/"$title"/Videos
+cp -p ./private/M4ROOT/CLIP/*.MP4 ~/Desktop/"$title"/Videos
+
+# Create an XML directory inside Videos and copy all the XML files over with metadata preserved
+mkdir -p ~/Desktop/"$title"/Videos/XML
+cp -p ./private/M4ROOT/CLIP/*.XML ~/Desktop/"$title"/Videos/XML
+
